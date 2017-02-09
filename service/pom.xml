@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>wet</artifactId>
+        <groupId>br.com.luvva.wet</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>wet-service</artifactId>
+
+    <properties>
+        <shadedJar>shaded</shadedJar>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>lc.kra.system</groupId>
+            <artifactId>system-hook</artifactId>
+            <version>2.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>br.com.luvva.wet</groupId>
+            <artifactId>wet-model</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>br.com.luvva.jwheel</groupId>
+            <artifactId>jwheel-logging</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <finalName>${shadedJar}</finalName>
+                            <filters> 
+                                <filter>
+                                     <artifact>*:*</artifact> 
+                                    <excludes>
+                                        <exclude>META-INF/*.SF</exclude>
+                                         <exclude>META-INF/*.DSA</exclude> 
+                                        <exclude>META-INF/*.RSA</exclude> 
+                                    </excludes>
+                                </filter>
+                                <filter>
+                                     <artifact>org.jboss.weld.se:weld-se</artifact> 
+                                    <includes>
+                                         <include>**</include> 
+                                    </includes>
+                                </filter>
+                                <filter>
+                                     <artifact>ch.qos.logback:logback-classic</artifact> 
+                                    <includes> 
+                                        <include>**</include> 
+                                    </includes>
+                                </filter>
+                                <filter>
+                                     <artifact>ch.qos.logback:logback-core</artifact> 
+                                    <includes> 
+                                        <include>**</include> 
+                                    </includes>
+                                </filter>
+                                <filter>
+                                     <artifact>com.thoughtworks.xstream:xstream</artifact> 
+                                    <includes> 
+                                        <include>**</include> 
+                                    </includes>
+                                </filter>
+                                <filter> 
+                                    <artifact>br.com.luvva.jwheel:jwheel-logging</artifact> 
+                                    <includes>
+                                         <include>**</include> 
+                                    </includes>
+                                </filter>
+                                <filter> 
+                                    <artifact>br.com.luvva.jwheel:jwheel-xml</artifact> 
+                                    <includes>
+                                         <include>**</include> 
+                                    </includes>
+                                </filter>
+                                <filter>
+                                     <artifact>br.com.luvva.wet:wet-model</artifact> 
+                                    <includes>
+                                         <include>**</include> 
+                                    </includes>
+                                </filter>
+                                <filter>
+                                     <artifact>br.com.luvva.wet:wet-service</artifact> 
+                                    <includes>
+                                         <include>**</include> 
+                                    </includes>
+                                </filter>
+                            </filters>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>com.akathist.maven.plugins.launch4j</groupId>
+                <artifactId>launch4j-maven-plugin</artifactId>
+                <version>1.7.12</version>
+                <executions>
+                    <execution>
+                        <id>l4j-gui</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>launch4j</goal>
+                        </goals>
+                        <configuration>
+                            <headerType>gui</headerType>
+                            <outfile>target/${project.name}.exe</outfile>
+                            <jar>target/${shadedJar}.jar</jar>
+                            <errTitle>${project.name}</errTitle>
+                            <singleInstance>
+                                <mutexName>wetService</mutexName>
+                            </singleInstance>
+                            <classPath>
+                                <main-class>br.com.luvva.wet.service.Main</main-class>
+                                <pre-cp>lib/*.jar</pre-cp>
+                            </classPath>
+                            <jre>
+                                <minVersion>1.8.0_45</minVersion>
+                            </jre>
+                            <messages>
+                                <startupErr>Startup error!</startupErr>
+                                <jreVersionErr>This program requires JRE</jreVersionErr>
+                                <launcherErr>Launcher error!</launcherErr>
+                            </messages>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+    <repositories>
+
+        <repository>
+            <id>system-hook-mvn-repo</id>
+            <url>https://raw.github.com/kristian/system-hook/mvn-repo/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+
+    </repositories>
+
+</project>
