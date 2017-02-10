@@ -9,24 +9,19 @@ import javax.inject.Inject;
  * @author Lima Filho, A. L. - amsterdam@luvva.com.br
  */
 @Custom
-public class UnsupportedOsKeyListener implements KeyListener
+public class UnsupportedOsKeyListener implements WetKeyListener
 {
     private @Inject Logger logger;
 
     @Override
-    public void setWetService (WetService wetService)
-    {
-    }
-
-    @Override
-    public boolean start ()
+    public boolean startListening ()
     {
         logger.error("Unsupported operation system!");
         return false;
     }
 
     @Override
-    public void shutDown ()
+    public void stopListening ()
     {
     }
 }

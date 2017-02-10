@@ -9,6 +9,17 @@ import br.com.jwheel.core.model.cdi.Custom;
 public class Preferences
 {
     private boolean enabled;
+    private boolean testMode;
+
+    public boolean isTestMode ()
+    {
+        return testMode;
+    }
+
+    public void setTestMode (boolean testMode)
+    {
+        this.testMode = testMode;
+    }
 
     public boolean isEnabled ()
     {

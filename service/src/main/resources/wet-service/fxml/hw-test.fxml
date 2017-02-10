@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="br.com.luvva.wet.service.HwTestController"
+          style="-fx-padding: 12px; -fx-hgap: 10px; -fx-vgap: 10px">
+
+    <columnConstraints>
+        <ColumnConstraints prefWidth="200"/>
+        <ColumnConstraints prefWidth="500"/>
+    </columnConstraints>
+
+    <Label text="Expected events"/>
+    <ListView fx:id="expectedEventsRecord" GridPane.rowIndex="1"/>
+    <Button text="Clear" onAction="#clearExpectedEvents" GridPane.rowIndex="3"/>
+
+    <Label text="Other events" GridPane.columnIndex="1"/>
+    <ListView fx:id="otherEventsRecord" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <Button text="Clear" onAction="#clearOtherEvents" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+</GridPane>

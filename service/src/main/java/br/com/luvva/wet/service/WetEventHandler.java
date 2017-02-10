@@ -5,5 +5,11 @@ package br.com.luvva.wet.service;
  */
 public interface WetEventHandler
 {
-    void handle ();
+    void handleEventA ();
+
+    void handleEventB ();
+
+    void handleEventC ();
+
+    void handleUnregisteredEvent (String event);
 }

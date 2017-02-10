@@ -10,10 +10,10 @@ import javax.inject.Singleton;
  * @author Lima Filho, A. L. - amsterdam@luvva.com.br
  */
 @Singleton
-public class KeyListenerFactory
+public class WetKeyListenerFactory
 {
     @Produces
-    KeyListener produce ()
+    WetKeyListener produce ()
     {
         if (SystemUtils.isWindows())
         {

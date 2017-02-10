@@ -22,5 +22,6 @@ public class PreferencesFactory extends PreferencesFactoryFromXml<Preferences>
     protected void setDefaultPreferences (Preferences preferencesBean)
     {
         preferencesBean.setEnabled(true);
+        preferencesBean.setTestMode(true);
     }
 }
