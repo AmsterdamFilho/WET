@@ -52,7 +52,7 @@ public class WindowsKeyListener implements WetKeyListener
                 }
                 else if (isExitEvent(event))
                 {
-                    WeldContext.getInstance().getBean(WetService.class).exit();
+                    WeldContext.getInstance().getBean(WetService.class).stop();
                 }
                 else
                 {

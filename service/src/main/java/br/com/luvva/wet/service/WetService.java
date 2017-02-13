@@ -1,7 +1,6 @@
 package br.com.luvva.wet.service;
 
 import br.com.luvva.wet.model.Preferences;
-import javafx.application.Platform;
 import org.slf4j.Logger;
 
 import javax.enterprise.inject.Default;
@@ -42,31 +41,14 @@ public class WetService
                     // does not reach here if the process is terminated by the user or OS
                     logger.error("Service interrupted.", e);
                 }
-                finally
-                {
-                    prepareToExit();
-                }
             }
         }
     }
 
-    public void exit ()
-    {
-        logger.info("Service requested to exit...");
-        if (preferences.isTestMode())
-        {
-            prepareToExit();
-            Platform.exit();
-        }
-        else
-        {
-            run = false;
-        }
-    }
-
-    private void prepareToExit ()
+    public void stop ()
     {
         keyListener.stopListening();
         logger.info("keyListener has stopped listening!");
+        run = false;
     }
 }

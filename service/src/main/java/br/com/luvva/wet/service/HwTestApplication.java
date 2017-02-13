@@ -25,7 +25,6 @@ public class HwTestApplication extends Application
             primaryStage.setTitle("Wireless Event Trigger Hardware Test");
             JavaFxUtils.centerOnScreen(primaryStage);
             primaryStage.show();
-
         }
         catch (Exception ex)
         {
@@ -37,7 +36,7 @@ public class HwTestApplication extends Application
     @Override
     public void stop () throws Exception
     {
-        WeldContext.getInstance().getBean(WetService.class).exit();
+        WeldContext.getInstance().getBean(WetService.class).stop();
     }
 
     public static void main (String[] args)
