@@ -10,6 +10,4 @@ public interface WetEventHandler
     void handleEventB ();
 
     void handleEventC ();
-
-    void handleUnregisteredEvent (String event);
 }

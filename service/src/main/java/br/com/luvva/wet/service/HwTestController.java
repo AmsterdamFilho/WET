@@ -1,5 +1,6 @@
 package br.com.luvva.wet.service;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 
@@ -14,7 +15,6 @@ import java.util.Date;
 public class HwTestController
 {
     private @FXML ListView<String> expectedEventsRecord;
-    private @FXML ListView<String> otherEventsRecord;
 
     private SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss.SSS");
 
@@ -35,21 +35,11 @@ public class HwTestController
 
     private void handleEvent (String type)
     {
-        expectedEventsRecord.getItems().add(sdf.format(new Date()) + " — " + type);
-    }
-
-    void handleUnregisteredEvent (String event)
-    {
-        otherEventsRecord.getItems().add(event);
+        Platform.runLater(() -> expectedEventsRecord.getItems().add(sdf.format(new Date()) + " — " + type));
     }
 
     public void clearExpectedEvents ()
     {
         expectedEventsRecord.getItems().clear();
-    }
-
-    public void clearOtherEvents ()
-    {
-        otherEventsRecord.getItems().clear();
     }
 }

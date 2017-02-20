@@ -29,10 +29,4 @@ public class HwTestEventHandler implements WetEventHandler
     {
         WeldContext.getInstance().getBean(HwTestController.class).handleEventC();
     }
-
-    @Override
-    public void handleUnregisteredEvent (String event)
-    {
-        WeldContext.getInstance().getBean(HwTestController.class).handleUnregisteredEvent(event);
-    }
 }

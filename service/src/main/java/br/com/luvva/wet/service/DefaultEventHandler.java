@@ -52,12 +52,6 @@ public class DefaultEventHandler implements WetEventHandler
         new PrivateHandlerC().handle();
     }
 
-    @Override
-    public void handleUnregisteredEvent (String event)
-    {
-        logger.debug("Not handling event: " + event);
-    }
-
     protected RobotService getRobotService ()
     {
         return robotService;

@@ -1,7 +1,6 @@
 package br.com.luvva.wet.service;
 
 import br.com.jwheel.core.service.cdi.WeldContext;
-import br.com.jwheel.core.service.java.SystemUtils;
 
 import javax.enterprise.inject.Produces;
 import javax.inject.Singleton;
@@ -15,9 +14,10 @@ public class WetKeyListenerFactory
     @Produces
     WetKeyListener produce ()
     {
-        if (SystemUtils.isWindows())
+        DefaultKeyListener defaultKeyListener = WeldContext.getInstance().getBean(DefaultKeyListener.class);
+        if (defaultKeyListener.isOsSUpported())
         {
-            return WeldContext.getInstance().getBean(WindowsKeyListener.class);
+            return defaultKeyListener;
         }
         return WeldContext.getInstance().getBean(UnsupportedOsKeyListener.class);
     }
