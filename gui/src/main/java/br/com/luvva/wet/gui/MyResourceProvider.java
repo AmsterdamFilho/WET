@@ -11,16 +11,12 @@ import java.net.URL;
 @Singleton
 public class MyResourceProvider extends ResourceProvider
 {
-    static final String LEFT_MOUSE_BUTTON   = "leftMouseButton";
-    static final String MIDDLE_MOUSE_BUTTON = "middleMouseButton";
-    static final String RIGHT_MOUSE_BUTTON  = "rightMouseButton";
-
-    URL mainSceneFxml ()
+    public URL mainSceneFxml ()
     {
         return getFxml("mainScene");
     }
 
-    String getMainSceneCSS ()
+    public String getMainSceneCSS ()
     {
         return getCss("mainScene");
     }
@@ -28,6 +24,6 @@ public class MyResourceProvider extends ResourceProvider
     @Override
     protected String root ()
     {
-        return "wet-gui";
+        return "wet-front";
     }
 }
