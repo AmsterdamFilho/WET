@@ -29,18 +29,6 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
-        <dependency>
-            <groupId>br.com.luvva.jwheel</groupId>
-            <artifactId>jwheel-logging</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>br.com.luvva.jwheel</groupId>
-            <artifactId>jwheel-javafx</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
     </dependencies>
 
     <build>
@@ -94,19 +82,13 @@
                                     </includes>
                                 </filter>
                                 <filter> 
-                                    <artifact>br.com.luvva.jwheel:jwheel-logging</artifact> 
+                                    <artifact>br.com.jwheel:jwheel-logging</artifact> 
                                     <includes>
                                          <include>**</include> 
                                     </includes>
                                 </filter>
                                 <filter> 
-                                    <artifact>br.com.luvva.jwheel:jwheel-javafx</artifact> 
-                                    <includes>
-                                         <include>**</include> 
-                                    </includes>
-                                </filter>
-                                <filter> 
-                                    <artifact>br.com.luvva.jwheel:jwheel-xml</artifact> 
+                                    <artifact>br.com.jwheel:jwheel-xml</artifact> 
                                     <includes>
                                          <include>**</include> 
                                     </includes>

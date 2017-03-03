@@ -11,4 +11,149 @@
 
     <artifactId>wet-gui</artifactId>
 
+    <properties>
+        <shadedJar>shaded</shadedJar>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>br.com.jwheel</groupId>
+            <artifactId>jwheel-template</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>br.com.luvva.wet</groupId>
+            <artifactId>wet-model</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <finalName>${shadedJar}</finalName>
+                            <filters> 
+                                <filter>
+                                     <artifact>*:*</artifact> 
+                                    <excludes>
+                                        <exclude>META-INF/*.SF</exclude>
+                                         <exclude>META-INF/*.DSA</exclude> 
+                                        <exclude>META-INF/*.RSA</exclude> 
+                                    </excludes>
+                                </filter>
+                                <filter>
+                                     <artifact>org.jboss.weld.se:weld-se</artifact> 
+                                    <includes>
+                                         <include>**</include> 
+                                    </includes>
+                                </filter>
+                                <filter>
+                                     <artifact>ch.qos.logback:logback-classic</artifact> 
+                                    <includes> 
+                                        <include>**</include> 
+                                    </includes>
+                                </filter>
+                                <filter>
+                                     <artifact>ch.qos.logback:logback-core</artifact> 
+                                    <includes> 
+                                        <include>**</include> 
+                                    </includes>
+                                </filter>
+                                <filter>
+                                     <artifact>com.thoughtworks.xstream:xstream</artifact> 
+                                    <includes> 
+                                        <include>**</include> 
+                                    </includes>
+                                </filter>
+                                <filter> 
+                                    <artifact>br.com.jwheel:jwheel-logging</artifact> 
+                                    <includes>
+                                         <include>**</include> 
+                                    </includes>
+                                </filter>
+                                <filter> 
+                                    <artifact>br.com.jwheel:jwheel-javafx</artifact> 
+                                    <includes>
+                                         <include>**</include> 
+                                    </includes>
+                                </filter>
+                                <filter> 
+                                    <artifact>br.com.jwheel:jwheel-xml</artifact> 
+                                    <includes>
+                                         <include>**</include> 
+                                    </includes>
+                                </filter>
+                                <filter> 
+                                    <artifact>br.com.jwheel:jwheel-template</artifact> 
+                                    <includes>
+                                         <include>**</include> 
+                                    </includes>
+                                </filter>
+                                <filter>
+                                     <artifact>br.com.luvva.wet:wet-model</artifact> 
+                                    <includes>
+                                         <include>**</include> 
+                                    </includes>
+                                </filter>
+                            </filters>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>com.akathist.maven.plugins.launch4j</groupId>
+                <artifactId>launch4j-maven-plugin</artifactId>
+                <version>1.7.12</version>
+                <executions>
+                    <execution>
+                        <id>l4j-gui</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>launch4j</goal>
+                        </goals>
+                        <configuration>
+                            <headerType>gui</headerType>
+                            <outfile>target/${project.name}.exe</outfile>
+                            <jar>target/${shadedJar}.jar</jar>
+                            <errTitle>${project.name}</errTitle>
+                            <singleInstance>
+                                <mutexName>wetGui</mutexName>
+                            </singleInstance>
+                            <classPath>
+                                <main-class>br.com.jwheel.template.control.ApplicationStarter</main-class>
+                            </classPath>
+                            <jre>
+                                <minVersion>1.8.0_45</minVersion>
+                            </jre>
+                            <messages>
+                                <startupErr>Startup error!</startupErr>
+                                <jreVersionErr>This program requires JRE</jreVersionErr>
+                                <launcherErr>Launcher error!</launcherErr>
+                            </messages>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+
+    </build>
+
 </project>

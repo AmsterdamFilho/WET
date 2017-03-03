@@ -7,6 +7,5 @@
         <exclude name="com.**"/>
         <exclude name="javax.**"/>
         <exclude name="ch.**"/>
-        <exclude name="lc.**"/>
     </scan>
 </beans>
