@@ -112,7 +112,7 @@ public class KeyTypedAction implements RobotAction
     @Override
     public void act (Robot robot)
     {
-        KeyStroke keyStrokeObject = KeyStroke.getKeyStroke(getKeyStroke());
+        KeyStroke keyStrokeObject = KeyStroke.getKeyStroke(getKeyStroke().toUpperCase());
         if (keyStrokeObject != null)
         {
             modifierKeyPress(robot);
