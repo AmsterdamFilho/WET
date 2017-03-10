@@ -12,6 +12,7 @@
         <module>gui</module>
         <module>model</module>
         <module>service</module>
+        <module>setup</module>
     </modules>
 
     <properties>
