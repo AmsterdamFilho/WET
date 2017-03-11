@@ -4,9 +4,6 @@ import br.com.jwheel.core.model.cdi.Custom;
 import br.com.jwheel.core.service.cdi.WeldContext;
 import br.com.luvva.wet.model.prefs.DefaultHandlerSettings;
 
-import javax.enterprise.inject.Default;
-import javax.enterprise.util.AnnotationLiteral;
-
 /**
  * @author Lima Filho, A. L. - amsterdam@luvva.com.br
  */
@@ -34,6 +31,6 @@ public final class DefaultEventHandler extends RobotEventHandler<DefaultHandlerS
     @Override
     protected DefaultHandlerSettings readSettings ()
     {
-        return WeldContext.getInstance().getBean(DefaultHandlerSettings.class, new AnnotationLiteral<Default>() {});
+        return WeldContext.getInstance().getDefault(DefaultHandlerSettings.class);
     }
 }

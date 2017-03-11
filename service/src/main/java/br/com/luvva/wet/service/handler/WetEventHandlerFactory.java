@@ -25,7 +25,8 @@ public class WetEventHandlerFactory
         {
             try
             {
-                return WeldContext.getInstance().getBean(WetEventHandler.class, new AnnotationLiteral<Extension>() {});
+                return WeldContext.getInstance().getWithQualifiers(WetEventHandler.class, new
+                        AnnotationLiteral<Extension>() {});
             }
             catch (Exception e)
             {
@@ -35,7 +36,7 @@ public class WetEventHandlerFactory
         }
         else
         {
-            return WeldContext.getInstance().getBean(DefaultEventHandler.class);
+            return WeldContext.getInstance().getAny(DefaultEventHandler.class);
         }
     }
 }

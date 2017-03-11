@@ -4,8 +4,6 @@ import br.com.jwheel.core.service.cdi.WeldContext;
 import br.com.luvva.wet.model.prefs.Preferences;
 import org.slf4j.Logger;
 
-import javax.enterprise.inject.Default;
-import javax.enterprise.util.AnnotationLiteral;
 import javax.inject.Inject;
 
 /**
@@ -39,7 +37,7 @@ public abstract class AbstractEventHandler<T> implements WetEventHandler
 
     private Preferences readPreferences ()
     {
-        return WeldContext.getInstance().getBean(Preferences.class, new AnnotationLiteral<Default>() {});
+        return WeldContext.getInstance().getDefault(Preferences.class);
     }
 
     private abstract class PrivateHandler

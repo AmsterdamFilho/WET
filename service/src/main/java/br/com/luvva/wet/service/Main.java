@@ -17,11 +17,11 @@ public class Main
     private void init ()
     {
         jwLoggerFactory.init();
-        WeldContext.getInstance().getBean(WetService.class).start();
+        WeldContext.getInstance().getAny(WetService.class).start();
     }
 
     public static void main (String args[])
     {
-        WeldContext.getInstance().getBean(Main.class);
+        WeldContext.getInstance().getAny(Main.class);
     }
 }

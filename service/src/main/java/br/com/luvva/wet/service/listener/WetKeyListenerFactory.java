@@ -14,11 +14,11 @@ public class WetKeyListenerFactory
     @Produces
     WetKeyListener produce ()
     {
-        DefaultKeyListener defaultKeyListener = WeldContext.getInstance().getBean(DefaultKeyListener.class);
+        DefaultKeyListener defaultKeyListener = WeldContext.getInstance().getAny(DefaultKeyListener.class);
         if (defaultKeyListener.isOsSupported())
         {
             return defaultKeyListener;
         }
-        return WeldContext.getInstance().getBean(UnsupportedOsKeyListener.class);
+        return WeldContext.getInstance().getAny(UnsupportedOsKeyListener.class);
     }
 }

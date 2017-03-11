@@ -11,7 +11,7 @@ import java.net.URL;
 @Singleton
 public class MyResourceProvider extends ResourceProvider
 {
-    public URL mainSceneFxml ()
+    URL mainSceneFxml ()
     {
         return getFxml("mainScene");
     }
