@@ -1,6 +1,6 @@
 package br.com.luvva.wet.service.listener;
 
-import br.com.jwheel.core.model.cdi.Custom;
+import br.com.jwheel.cdi.Custom;
 import br.com.luvva.wet.service.handler.WetEventHandler;
 import org.slf4j.Logger;
 

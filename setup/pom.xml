@@ -52,72 +52,6 @@
                                         <exclude>META-INF/*.RSA</exclude> 
                                     </excludes>
                                 </filter>
-                                <filter>
-                                     <artifact>org.jboss.weld.se:weld-se</artifact> 
-                                    <includes>
-                                         <include>**</include> 
-                                    </includes>
-                                </filter>
-                                <filter>
-                                     <artifact>ch.qos.logback:logback-classic</artifact> 
-                                    <includes> 
-                                        <include>**</include> 
-                                    </includes>
-                                </filter>
-                                <filter>
-                                     <artifact>ch.qos.logback:logback-core</artifact> 
-                                    <includes> 
-                                        <include>**</include> 
-                                    </includes>
-                                </filter>
-                                <filter>
-                                     <artifact>com.thoughtworks.xstream:xstream</artifact> 
-                                    <includes> 
-                                        <include>**</include> 
-                                    </includes>
-                                </filter>
-                                <filter> 
-                                    <artifact>br.com.jwheel:jwheel-logging</artifact> 
-                                    <includes>
-                                         <include>**</include> 
-                                    </includes>
-                                </filter>
-                                <filter> 
-                                    <artifact>br.com.jwheel:jwheel-javafx</artifact> 
-                                    <includes>
-                                         <include>**</include> 
-                                    </includes>
-                                </filter>
-                                <filter> 
-                                    <artifact>br.com.jwheel:jwheel-xml</artifact> 
-                                    <includes>
-                                         <include>**</include> 
-                                    </includes>
-                                </filter>
-                                <filter> 
-                                    <artifact>br.com.jwheel:jwheel-template</artifact> 
-                                    <includes>
-                                         <include>**</include> 
-                                    </includes>
-                                </filter>
-                                <filter>
-                                     <artifact>br.com.luvva.wet:wet-model</artifact> 
-                                    <includes>
-                                         <include>**</include> 
-                                    </includes>
-                                </filter>
-                                <filter>
-                                     <artifact>br.com.luvva.wet:wet-gui</artifact> 
-                                    <includes>
-                                         <include>**</include> 
-                                    </includes>
-                                </filter>
-                                <filter>
-                                     <artifact>br.com.luvva.wet:wet-front</artifact> 
-                                    <includes>
-                                         <include>**</include> 
-                                    </includes>
-                                </filter>
                             </filters>
                         </configuration>
                     </execution>

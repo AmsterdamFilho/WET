@@ -1,7 +1,7 @@
 package br.com.luvva.wet.service.handler;
 
-import br.com.jwheel.core.model.cdi.Custom;
-import br.com.jwheel.core.service.cdi.WeldContext;
+import br.com.jwheel.cdi.Custom;
+import br.com.jwheel.cdi.WeldContext;
 import br.com.luvva.wet.model.prefs.DefaultHandlerSettings;
 
 /**

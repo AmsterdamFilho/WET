@@ -1,6 +1,6 @@
 package br.com.luvva.wet.service.handler;
 
-import br.com.jwheel.core.service.cdi.WeldContext;
+import br.com.jwheel.cdi.WeldContext;
 import br.com.luvva.wet.model.prefs.Preferences;
 import org.slf4j.Logger;
 

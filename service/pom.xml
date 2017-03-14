@@ -29,6 +29,12 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
+        <dependency>
+            <groupId>br.com.jwheel</groupId>
+            <artifactId>jwheel-logging</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -56,54 +62,6 @@
                                          <exclude>META-INF/*.DSA</exclude> 
                                         <exclude>META-INF/*.RSA</exclude> 
                                     </excludes>
-                                </filter>
-                                <filter>
-                                     <artifact>org.jboss.weld.se:weld-se</artifact> 
-                                    <includes>
-                                         <include>**</include> 
-                                    </includes>
-                                </filter>
-                                <filter>
-                                     <artifact>ch.qos.logback:logback-classic</artifact> 
-                                    <includes> 
-                                        <include>**</include> 
-                                    </includes>
-                                </filter>
-                                <filter>
-                                     <artifact>ch.qos.logback:logback-core</artifact> 
-                                    <includes> 
-                                        <include>**</include> 
-                                    </includes>
-                                </filter>
-                                <filter>
-                                     <artifact>com.thoughtworks.xstream:xstream</artifact> 
-                                    <includes> 
-                                        <include>**</include> 
-                                    </includes>
-                                </filter>
-                                <filter> 
-                                    <artifact>br.com.jwheel:jwheel-logging</artifact> 
-                                    <includes>
-                                         <include>**</include> 
-                                    </includes>
-                                </filter>
-                                <filter> 
-                                    <artifact>br.com.jwheel:jwheel-xml</artifact> 
-                                    <includes>
-                                         <include>**</include> 
-                                    </includes>
-                                </filter>
-                                <filter>
-                                     <artifact>br.com.luvva.wet:wet-model</artifact> 
-                                    <includes>
-                                         <include>**</include> 
-                                    </includes>
-                                </filter>
-                                <filter>
-                                     <artifact>br.com.luvva.wet:wet-service</artifact> 
-                                    <includes>
-                                         <include>**</include> 
-                                    </includes>
                                 </filter>
                             </filters>
                         </configuration>

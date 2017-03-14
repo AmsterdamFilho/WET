@@ -1,6 +1,6 @@
 package br.com.luvva.wet.service;
 
-import br.com.jwheel.core.service.cdi.WeldContext;
+import br.com.jwheel.cdi.WeldContext;
 import br.com.jwheel.logging.JwLoggerFactory;
 
 import javax.annotation.PostConstruct;

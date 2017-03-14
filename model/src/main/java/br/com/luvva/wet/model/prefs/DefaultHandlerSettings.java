@@ -1,6 +1,6 @@
 package br.com.luvva.wet.model.prefs;
 
-import br.com.jwheel.core.model.cdi.Custom;
+import br.com.jwheel.cdi.Custom;
 import br.com.luvva.wet.model.actions.RobotAction;
 
 /**
