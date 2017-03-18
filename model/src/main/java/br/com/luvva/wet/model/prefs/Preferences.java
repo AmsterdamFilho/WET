@@ -1,16 +1,14 @@
 package br.com.luvva.wet.model.prefs;
 
-import br.com.jwheel.cdi.Custom;
 import javafx.beans.property.SimpleBooleanProperty;
 
 /**
  * @author Lima Filho, A. L. - amsterdam@luvva.com.br
  */
-@Custom
 public class Preferences
 {
-    private SimpleBooleanProperty enabled      = new SimpleBooleanProperty(true);
-    private SimpleBooleanProperty useExtension = new SimpleBooleanProperty(true);
+    private SimpleBooleanProperty enabled      = new SimpleBooleanProperty();
+    private SimpleBooleanProperty useExtension = new SimpleBooleanProperty();
 
     public boolean isEnabled ()
     {

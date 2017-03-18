@@ -1,5 +1,6 @@
 package br.com.luvva.wet.gui;
 
+import br.com.jwheel.xml.model.FromXmlPreferences;
 import br.com.luvva.wet.model.prefs.DefaultHandlerSettings;
 import br.com.luvva.wet.model.prefs.DefaultHandlerSettingsDao;
 import br.com.luvva.wet.model.prefs.Preferences;
@@ -15,9 +16,10 @@ import java.io.IOException;
  */
 public class MainSceneService
 {
-    private @Inject Preferences               preferences;
+    private @Inject @FromXmlPreferences Preferences            preferences;
+    private @Inject @FromXmlPreferences DefaultHandlerSettings settings;
+
     private @Inject PreferencesDao            preferencesDao;
-    private @Inject DefaultHandlerSettings    settings;
     private @Inject DefaultHandlerSettingsDao settingsDao;
 
     private @Inject Logger logger;

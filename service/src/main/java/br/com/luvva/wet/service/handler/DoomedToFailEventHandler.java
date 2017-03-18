@@ -1,6 +1,6 @@
 package br.com.luvva.wet.service.handler;
 
-import br.com.jwheel.cdi.Custom;
+import br.com.jwheel.weld.Custom;
 
 /**
  * @author Lima Filho, A. L. - amsterdam@luvva.com.br

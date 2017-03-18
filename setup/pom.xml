@@ -78,7 +78,7 @@
                                 <mutexName>${swName}</mutexName>
                             </singleInstance>
                             <classPath>
-                                <main-class>br.com.jwheel.template.control.ApplicationStarter</main-class>
+                                <main-class>br.com.jwheel.javafx.ApplicationStarter</main-class>
                             </classPath>
                             <jre>
                                 <minVersion>1.8.0_45</minVersion>

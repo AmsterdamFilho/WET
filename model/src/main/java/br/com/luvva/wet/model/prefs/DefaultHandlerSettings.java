@@ -1,12 +1,10 @@
 package br.com.luvva.wet.model.prefs;
 
-import br.com.jwheel.cdi.Custom;
 import br.com.luvva.wet.model.actions.RobotAction;
 
 /**
  * @author Lima Filho, A. L. - amsterdam@luvva.com.br
  */
-@Custom
 public class DefaultHandlerSettings
 {
     private RobotAction robotActionA;

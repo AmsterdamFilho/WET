@@ -1,17 +1,19 @@
 package br.com.luvva.wet.service.handler;
 
-import br.com.jwheel.cdi.WeldContext;
+import br.com.jwheel.weld.WeldContext;
+import br.com.jwheel.xml.model.FromXmlPreferences;
 import br.com.luvva.wet.model.prefs.Preferences;
 import org.slf4j.Logger;
 
+import javax.enterprise.util.AnnotationLiteral;
 import javax.inject.Inject;
 
 /**
  * A WetEventHandler that respects the enabled setting from {@link Preferences} and handles the events according to
  * some settings
  *
- * @author Lima Filho, A. L. - amsterdam@luvva.com.br
  * @param <T> the settings model
+ * @author Lima Filho, A. L. - amsterdam@luvva.com.br
  */
 public abstract class AbstractEventHandler<T> implements WetEventHandler
 {
@@ -37,7 +39,8 @@ public abstract class AbstractEventHandler<T> implements WetEventHandler
 
     private Preferences readPreferences ()
     {
-        return WeldContext.getInstance().getDefault(Preferences.class);
+        return WeldContext.getInstance().getWithQualifiers(Preferences.class,
+                new AnnotationLiteral<FromXmlPreferences>() {});
     }
 
     private abstract class PrivateHandler

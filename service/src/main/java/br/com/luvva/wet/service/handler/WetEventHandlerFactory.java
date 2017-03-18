@@ -1,19 +1,17 @@
 package br.com.luvva.wet.service.handler;
 
-import br.com.jwheel.cdi.WeldContext;
+import br.com.jwheel.weld.WeldContext;
 import br.com.luvva.wet.model.prefs.Preferences;
 import org.slf4j.Logger;
 
 import javax.enterprise.inject.Produces;
 import javax.enterprise.util.AnnotationLiteral;
 import javax.inject.Inject;
-import javax.inject.Singleton;
 
 /**
  * @author Lima Filho, A. L. - amsterdam@luvva.com.br
  */
-@Singleton
-public class WetEventHandlerFactory
+public final class WetEventHandlerFactory
 {
     private @Inject Preferences preferences;
     private @Inject Logger      logger;
