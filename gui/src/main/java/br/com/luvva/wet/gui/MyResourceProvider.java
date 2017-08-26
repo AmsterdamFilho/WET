@@ -22,6 +22,6 @@ public class MyResourceProvider extends ResourceProvider
     @Override
     protected String root ()
     {
-        return "wet-front";
+        return "wet-gui";
     }
 }
